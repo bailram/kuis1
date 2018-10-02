@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <h2 [ngClass]="{'font': true}">Form Data Mahasiswa</h2>
+      <hr>
+      <form>
+        <div class="form-group">
+          <label for="nim" [ngClass]="{'font': true}">NIM</label>
+          <input type="text" class="form-control" name="nim" id="nim" [(ngModel)]="nim">
+          <label for="nama" [ngClass]="{'font': true}">Nama</label>
+          <input type="text" class="form-control" name="nama" id="nama" [(ngModel)]="nama">
+          <label for="kelas" [ngClass]="{'font': true}">Kelas</label>
+          <input type="text" class="form-control" name="kelas" id="kelas" [(ngModel)]="kelas">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" (click)="tambahMhs()">Tambah</button>
+      </form>
+    </div>
+    <div class="col">
+      <h2 [ngClass]="{'font': true}">Data Mahasiswa</h2>
+      <hr>
+      <div class="row">
+          <div class="col-md-12 mt-3" *ngFor="let mhs of daftarMhs">
+            <div class="card">
+              <div class="card-header">
+                <h3 [ngClass]="{'font': true}">{{ mhs.nama }}</h3>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" [ngClass]="{'font': true}">{{ mhs.nim }}</h5>
+                <p class="card-text" [ngClass]="{'font': true}">{{ mhs.kelas }}</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

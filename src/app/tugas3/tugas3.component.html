@@ -1,0 +1,10 @@
+<button 
+  class="btn btn-primary" 
+  (click)="onClickDetail()">Tampilkan Detail</button>
+  <p>{{ detailName }}</p>
+  <div *ngFor="let data of log">
+  <p [ngStyle] = "{'background-color': data>=5? '#007bff' : 'white'}"
+    [ngClass] = "{text: data >= 5}">
+    {{ data }}
+  </p>
+</div>
